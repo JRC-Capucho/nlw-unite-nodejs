@@ -32,4 +32,7 @@ jobs:
       - name: Push image
         run: |
           docker push joaorc/nlw-unite-nodejs:${{ steps.generate_sha.outputs.sha }}
+          docker tag joaorc/nlw-unite-nodejs:${{ steps.generate_sha.outputs.sha }} joaorc/nlw-unite-nodejs:latest
+          docker push joaorc/nlw-unite-nodejs:latest
+
 
